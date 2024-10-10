@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <h1>Login</h1>
+        
+        <form action="#" method="POST">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter your password" required>
+
+            <button type="submit" class="login-btn">Login</button>
+        </form>
+
+        <div class="divider">
+            <span>or</span>
+        </div>
+
+        <div class="social-login">
+            <button class="facebook-btn" onclick="facebookLogin()">Login with Facebook</button>
+        </div>
+    </div>
+
+    <!-- Load Facebook SDK for JavaScript -->
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" 
+        src="https://connect.facebook.net/en_US/sdk.js"></script>
+    
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId      : '1262585558231563', // Replace with your Facebook App ID
+                cookie     : true,
+                xfbml      : true,
+                version    : 'v20.0' // Use the latest Facebook SDK version
+            });
+
+            FB.AppEvents.logPageView();   
+        };
+
+        function facebookLogin() {
+            FB.login(function(response) {
+                if (response.authResponse) {
+                    // The user is logged in
+                    console.log('Welcome! Fetching your information.... ');
+                    FB.api('/me', function(response) {
+                        console.log('Successful login for: ' + response.name);
+                        // Redirect to index.html after successful login
+                        window.location.href = "index.html";
+                    });
+                } else {
+                    console.log('User cancelled login or did not fully authorize.');
+                }
+            }, {scope: 'public_profile,email'});
+        }
+    </script>
+</body>
+</html>

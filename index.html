@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Maria Flor Besinan</title>
+    <style>
+        /* General reset and styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body, html {
+            height: 100%;
+            font-family: 'Arial', sans-serif;
+            background-color: black;
+            color: yellow;
+            background-image: url(bg1.jpg);
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            scroll-behavior: smooth; /* Smooth scrolling */
+        }
+        /* Fade-in animation for sections */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Cover Section Styling */
+        .cover-container {
+            background-image: url('port2.png');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .blue-circle {
+            position: absolute;
+            width: 450px;
+            height: 300px;
+            background-color: blue;
+            border-radius: 100%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: pulse 2s infinite; /* Animation for the circle */
+        }
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1) translate(-50%, -50%);
+            }
+            50% {
+                transform: scale(1.1) translate(-50%, -50%);
+            }
+        }
+        .portfolio-text {
+            position: absolute;
+            color: yellow;
+            font-size: 150px;
+            font-weight: bolder;
+            text-align: center;
+            animation: slideIn 1.5s ease-out; /* Slide in text */
+        }
+        @keyframes slideIn {
+            0% {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        .subtitle {
+            position: absolute;
+            top: 80%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 25px;
+            color: yellow;
+            animation: fadeIn 2s ease-out;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        /* Content Section */
+        .portfolio-section {
+            padding: 30px;
+            margin: 10px auto;
+            width: 80%;
+            background-color: rgba(1, 1, 17, 0.8);
+            border-radius: 8px;
+            transition: transform 0.5s ease-out; /* Section animation */
+        }
+        .portfolio-section:hover {
+            transform: translateY(-10px);
+        }
+        .highlight {
+            color: yellow;
+            font-weight: bold;
+        }
+
+        /* Experience section with images */
+        .experience-images img {
+            width: 30%;
+            padding: 10px;
+            border-radius: 8px;
+            transition: transform 0.3s ease-out; /* Image hover effect */
+        }
+        .experience-images img:hover {
+            transform: scale(1.1); /* Zoom on hover */
+        }
+
+        /* Right-aligned text */
+        .right-aligned-text {
+            text-align: right;
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .corner-text {
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            color: white;
+            font-size: 1.2em;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Corner text at the top left -->
+<div class="corner-text">BSIT 3C</div>
+
+<!-- Portfolio Cover Section -->
+<div class="cover-container">
+    <div class="blue-circle"></div>
+    <div class="overlay"></div>
+    <div class="portfolio-text">PORT<span style="font-size: 0.5em; display: block;">FOLIO</span></div>
+    <p class="subtitle">MARIA FLOR BESINAN</p>
+</div>
+
+<!-- Portfolio Section -->
+<section class="portfolio-section fade-in" id="portfolio">
+    <h2 class="highlight">2022 - 2024</h2>
+    <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+        <div>
+            <h2 class="highlight">HEY THERE, MARIA FLOR HERE!</h2>
+        </div>
+        <div style="text-align: center;">
+            <img src="image2.jpg" alt="Maria Flor" style="width:100%; max-width:300px;">
+        </div>
+        <div class="right-aligned-text">
+            <p>Hi! I'm Maria Flor M. Besinan, from BSIT 3C</p>
+            <p>Always come and visit my profile!</p>
+        </div>
+    </div>
+</section>
+
+<!-- Experience Section -->
+<section class="portfolio-section fade-in">
+    <h2>EXPERIENCE</h2>
+    <div style="display: flex; justify-content: space-between;">
+        <div style="width: 50%; padding-right: 10px;">
+            <p>Practice and performance of dance for CHARTER DAY at DNSC Sports Complex</p>
+            <img src="prac.jpg" alt="Charter Day Practice" style="width: 100%; border-radius: 8px;">
+        </div>
+        <div class="experience-images" style="width: 50%;">
+            <img src="final.jpg" alt="Final Performance" style="width: 100%; border-radius: 8px;">
+        </div>
+    </div>
+</section>
+
+<!-- More Experience Section -->
+<section class="portfolio-section fade-in">
+    <h2>MORE EXPERIENCE</h2>
+    <div class="experience-images">
+        <img src="gawas.jpg" alt="Experience Image 3">
+        <img src="perform.jpg" alt="Experience Image 4">
+    </div>
+    <p>After our modern dance performance, we proceeded to jazz chant and had a groupfie with classmates, BSIT 1G.</p>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2024 MARIA FLOR Portfolio. All Rights Reserved.</p>
+</footer>
+
+<script>
+    // JavaScript to add fade-in effect when sections scroll into view
+    document.addEventListener("DOMContentLoaded", function () {
+        const sections = document.querySelectorAll(".fade-in");
+
+        const options = {
+            threshold: 0.2 // Trigger the effect when 20% of the section is visible
+        };
+
+        const observer = new IntersectionObserver(function (entries, observer) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    observer.unobserve(entry.target); // Remove the observer once the animation has been triggered
+                }
+            });
+        }, options);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    });
+</script>
+
+</body>
+</html>
